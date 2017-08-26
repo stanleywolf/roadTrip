@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _16.RoadTrip
+{
+    class roadTrip
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            string season = Console.ReadLine();
+            var europaSpend = 0.90 * budget;
+            if (budget <= 100)
+            {
+                Console.WriteLine("Somewhere in Bulgaria");
+                if(season=="summer")
+                    Console.WriteLine("Camp - {0:f2}",0.30*budget);
+                else if(season=="winter")
+                    Console.WriteLine("Hotel - {0:f2}",0.70*budget);
+            }
+            else if (budget <= 1000)
+            {
+                Console.WriteLine("Somewhere in Balkans");
+                if(season=="summer")
+                    Console.WriteLine("Camp - {0:f2}",0.40*budget);
+                else if(season=="winter")
+                    Console.WriteLine("Hotel - {0:f2}",0.80*budget);
+            }
+            else if (budget > 1000)
+            {
+                Console.WriteLine("Somewhere in Europe");
+                Console.WriteLine("Hotel - {0:f2}",europaSpend);
+            }
+        }
+    }
+}
